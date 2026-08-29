@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+::selection {
+  background-color: #c9a15c;
+  color: #08080a;
+}
+
+/* Borde "arrancado" tipo comanda de cocina, usado en el ticket de
+   asesoramientos puntuales. Los puntos combinan % (ancho) y px (profundidad
+   del diente) para que el patrón se mantenga prolijo en cualquier ancho. */
+.torn-edge {
+  clip-path: polygon(
+    0% 0%,
+    6.25% 10px,
+    12.5% 0%,
+    18.75% 10px,
+    25% 0%,
+    31.25% 10px,
+    37.5% 0%,
+    43.75% 10px,
+    50% 0%,
+    56.25% 10px,
+    62.5% 0%,
+    68.75% 10px,
+    75% 0%,
+    81.25% 10px,
+    87.5% 0%,
+    93.75% 10px,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

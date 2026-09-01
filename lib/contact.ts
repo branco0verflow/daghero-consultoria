@@ -1,15 +1,42 @@
-export const CONTACT = {
+export interface WhatsAppContact {
+  country: string;
+  flag: string;
   // Sin "+", espacios ni guiones: formato requerido por wa.me
-  whatsapp: "59892989794",
-  whatsappDisplay: "+598 92 989 794",
+  number: string;
+  display: string;
+}
+
+export const WHATSAPP_NUMBERS: WhatsAppContact[] = [
+  {
+    country: "Uruguay",
+    flag: "🇺🇾",
+    number: "59892989794",
+    display: "+598 92 989 794",
+  },
+  {
+    country: "Andorra",
+    flag: "🇦🇩",
+    number: "376385040",
+    display: "+376 385 040",
+  },
+];
+
+export const CONTACT = {
+  // Número principal (Uruguay), usado como default en los CTA genéricos.
+  whatsapp: WHATSAPP_NUMBERS[0].number,
+  whatsappDisplay: WHATSAPP_NUMBERS[0].display,
   email: "dagherofacundo@gmail.com",
 };
 
 /**
  * Arma un link de WhatsApp (wa.me) con un mensaje pre-cargado.
+ * Por defecto usa el número principal; se puede pasar otro (ej. Andorra).
  */
-export function buildWhatsAppLink(message: string): string {
-  const base = `https://wa.me/${CONTACT.whatsapp}`;
+export function buildWhatsAppLink(
+  message: string,
+  phone: string = CONTACT.whatsapp
+): string {
+  const base = `https://wa.me/${phone}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 

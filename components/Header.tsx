@@ -44,6 +44,9 @@ export default function Header() {
           <a href="#puntual" className="transition-colors hover:text-ink">
             Asesoramientos puntuales
           </a>
+          <a href="#desde-cero" className="transition-colors hover:text-ink">
+            Proyecto desde cero
+          </a>
           <a href="#contacto" className="transition-colors hover:text-ink">
             Contacto
           </a>

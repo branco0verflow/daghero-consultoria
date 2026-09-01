@@ -1,6 +1,6 @@
 export interface WhatsAppContact {
   country: string;
-  flag: string;
+  flagSrc: string;
   // Sin "+", espacios ni guiones: formato requerido por wa.me
   number: string;
   display: string;
@@ -9,13 +9,13 @@ export interface WhatsAppContact {
 export const WHATSAPP_NUMBERS: WhatsAppContact[] = [
   {
     country: "Uruguay",
-    flag: "🇺🇾",
+    flagSrc: "/images/flags/uy.svg",
     number: "59892989794",
     display: "+598 92 989 794",
   },
   {
     country: "Andorra",
-    flag: "🇦🇩",
+    flagSrc: "/images/flags/ad.svg",
     number: "376385040",
     display: "+376 385 040",
   },

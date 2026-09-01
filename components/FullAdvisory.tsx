@@ -1,4 +1,4 @@
-import { buildMailtoLink, buildWhatsAppLink } from "@/lib/contact";
+import { buildWhatsAppLink } from "@/lib/contact";
 
 const INCLUDED = [
   "Diagnóstico integral del negocio: cocina, sala y procesos.",
@@ -66,10 +66,10 @@ export default function FullAdvisory() {
             Consultar por WhatsApp
           </a>
           <a
-            href={buildMailtoLink("Consulta — Asesoramiento Completo", message)}
+            href="#contacto"
             className="rounded-full border border-ink/20 px-5 py-3 text-center text-sm text-ink transition-colors hover:border-brass hover:text-brass"
           >
-            Escribir un email
+            Contactar por email
           </a>
         </div>
       </div>

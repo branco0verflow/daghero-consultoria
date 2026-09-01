@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
 import { PUNCTUAL_ITEMS } from "@/lib/services-data";
-import { buildMailtoLink, buildWhatsAppLink } from "@/lib/contact";
+import { buildWhatsAppLink } from "@/lib/contact";
 
 export default function PunctualTicket() {
   const [selected, setSelected] = useState<Record<string, boolean>>({});
@@ -150,10 +150,10 @@ export default function PunctualTicket() {
             Enviar por WhatsApp
           </a>
           <a
-            href={buildMailtoLink("Consulta — Asesoramiento Puntual", message)}
+            href="#contacto"
             className="rounded-full border border-ink/20 px-5 py-3 text-center text-sm text-ink transition-colors hover:border-brass hover:text-brass"
           >
-            Enviar por email
+            Contactar por email
           </a>
         </div>
       </div>

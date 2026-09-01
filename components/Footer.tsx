@@ -43,7 +43,12 @@ export default function Footer() {
                 className="flex items-center justify-between rounded-lg border border-line px-4 py-3 text-ink transition-colors hover:border-brass hover:text-brass"
               >
                 <span className="flex items-center gap-2">
-                  <span aria-hidden="true">{contact.flag}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element -- SVG chico, no necesita el optimizador de next/image */}
+                  <img
+                    src={contact.flagSrc}
+                    alt={`Bandera de ${contact.country}`}
+                    className="h-4 w-6 shrink-0 rounded-sm object-cover ring-1 ring-line"
+                  />
                   WhatsApp &mdash; {contact.country}
                 </span>
                 <span className="text-ink-muted">{contact.display}</span>
